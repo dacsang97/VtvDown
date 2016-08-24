@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import Home from './containers/home'
 
 class Root extends Component {
   render() {
     return (
-      <h1> Hello World </h1>
+      <Home />
     )
   }
 }
