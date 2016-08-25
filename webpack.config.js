@@ -2,6 +2,10 @@ var webpack = require('webpack');
 var config = {
   devtool : 'eval-source-map',
   entry : __dirname + '/app/index.js',
+  resolve: {
+    root: __dirname,
+    modulesDirectories: ["node_modules"]
+  },
   output : {
     path : __dirname + '/public',
     filename : 'bundle.js',
@@ -20,7 +24,15 @@ var config = {
         test : /\.scss$/,
         loader : 'style!css!sass',
       },
+      { test: /\.json$/, loader: 'json-loader' }
     ]
+  },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    'child_process' : 'empty',
   },
   devServer : {
     contentBase : './public',

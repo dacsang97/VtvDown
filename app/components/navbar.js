@@ -24,8 +24,9 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">Link Right</NavItem>
-            <NavItem eventKey={2} href="#">Link Right</NavItem>
+            <NavItem eventKey={1} href="https://github.com/dacsang97/VtvDown">
+              <i className="fa fa-github" aria-hidden="true" /> Github
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
