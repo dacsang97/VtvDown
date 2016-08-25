@@ -26,8 +26,11 @@
   "homepage": "https://github.com/dacsang97/VtvDown#readme",
   "dependencies": {
     "axios": "^0.13.1",
+    "babel-preset-stage-1": "^6.13.0",
+    "body-parser": "^1.15.2",
     "cheerio": "^0.22.0",
     "css-loader": "^0.23.1",
+    "express": "^4.14.0",
     "node-sass": "^3.8.0",
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.3",

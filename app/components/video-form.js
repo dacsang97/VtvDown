@@ -16,6 +16,7 @@ class VideoForm extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange(evt) {
     const text = evt.target.value
@@ -34,6 +35,11 @@ class VideoForm extends Component {
   }
   handleSubmit(evt) {
     evt.preventDefault()
+    this.setState({
+      value: '',
+      valid: false,
+      touched: false,
+    })
   }
   render() {
     return (
@@ -65,7 +71,7 @@ class VideoForm extends Component {
           <Button
             type="submit" bsStyle="primary" bsSize="large" block
             onClick={this.handleClick}
-            // disabled={!this.state.valid}
+            disabled={!this.state.valid}
           >
             <i className="fa fa-download" aria-hidden="true" /> Get Link
           </Button>
