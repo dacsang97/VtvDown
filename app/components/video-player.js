@@ -16,7 +16,7 @@ class VideoPlayer extends Component {
     // if (!this.state.loaded) {
     //   return (<h3>Loading</h3>)
     // }
-    const footer = (<a href={this.props.linkDown}>
+    const footer = (<a href={this.props.linkDown} target="_blank" rel="noopener noreferrer">
       <Button>
         <i className="fa fa-download" aria-hidden="true" /> Download
       </Button>

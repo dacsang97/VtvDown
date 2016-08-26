@@ -15,11 +15,9 @@ export default function (state = initialState, action) {
       const linkDown = `http://vhosting.vcmedia.vn/${source.match(re)[0]}`
       const loaded = false
       source = source.replace('http://', 'https://')
-      console.log({ title, source, linkDown, loaded })
       return { title, source, linkDown, loaded }
     }
     case LOADED: {
-      console.log('ok')
       return { ...state, loaded: true }
     }
     default :
