@@ -16,7 +16,7 @@ class VideoPlayer extends Component {
     // if (!this.state.loaded) {
     //   return (<h3>Loading</h3>)
     // }
-    const footer = (<a href={this.props.linkDown} target="_blank" rel="noopener noreferrer">
+    const footer = (<a href={this.props.linkDown} target="_blank">
       <Button>
         <i className="fa fa-download" aria-hidden="true" /> Download
       </Button>
@@ -34,7 +34,7 @@ class VideoPlayer extends Component {
           <Panel header={this.props.title} footer={footer} bsStyle="info">
             <ResponsiveEmbed a16by9>
               <iframe
-                width="560" height="315" src={this.props.source}
+                width="560" height="315" src={this.props.linkDown}
                 allowFullScreen
                 onLoad={this.handleOnload}
               />
