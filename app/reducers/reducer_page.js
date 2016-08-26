@@ -1,4 +1,4 @@
-import { GET_LINK } from '../actions'
+import { GET_LINK, LOADED } from '../actions'
 
 const initialState = {
   linkDown: 'http://vhosting.vcmedia.vn/vtv/jt-wmjo-rkiopdqhrxdpw0d6w9mirt/2016/08/24/2408-phim-toi-v3-1472054672635-7bcf4.mp4',
@@ -13,8 +13,13 @@ export default function (state = initialState, action) {
       const source = data.source
       const re = /vtv\/(.*)\.mp4/i
       const linkDown = `http://vhosting.vcmedia.vn/${source.match(re)[0]}`
-      console.log({ title, source, linkDown })
-      return { title, source, linkDown }
+      const loaded = false
+      console.log({ title, source, linkDown, loaded })
+      return { title, source, linkDown, loaded }
+    }
+    case LOADED: {
+      console.log('ok')
+      return { ...state, loaded: true }
     }
     default :
       return state
