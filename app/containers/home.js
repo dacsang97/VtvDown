@@ -12,17 +12,7 @@ class Home extends Component {
       mounted: false,
     }
   }
-  componentDidMount() {
-    this.setState({
-      mounted: true,
-    })
-  }
   render() {
-    if (!this.state.mounted) {
-      return (
-        <h1>Loading</h1>
-      )
-    }
     return (
       <div>
         <Header />
