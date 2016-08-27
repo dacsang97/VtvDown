@@ -71,6 +71,12 @@ class VideoForm extends Component {
               {`${this.state.touched && !this.state.valid ?
                   'Vui lòng đúng link từ website vtv.vn/video' : ''}`}
             </HelpBlock>
+            <ControlLabel>
+              VTV Video : <a href="http://vtv.vn/truyen-hinh-truc-tuyen.htm">
+                http://vtv.vn/truyen-hinh-truc-tuyen.htm
+              </a>
+
+            </ControlLabel>
           </FormGroup>
           <Button
             type="submit" bsStyle="primary" bsSize="large" block
