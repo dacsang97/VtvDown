@@ -34,7 +34,7 @@ class VideoPlayer extends Component {
           <Panel header={this.props.title} footer={footer} bsStyle="info">
             <ResponsiveEmbed a16by9>
               <iframe
-                width="560" height="315" src={this.props.linkDown}
+                width="560" height="315" src={this.props.source}
                 allowFullScreen
                 onLoad={this.handleOnload}
               />

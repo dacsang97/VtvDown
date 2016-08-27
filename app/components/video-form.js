@@ -4,7 +4,7 @@ import {
   InputGroup, Button, HelpBlock,
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { getLink } from '../actions'
+import { getLink, onLoad } from '../actions'
 
 class VideoForm extends Component {
   constructor() {
@@ -13,6 +13,7 @@ class VideoForm extends Component {
       value: '',
       valid: false,
       touched: false,
+      placeholder: 'http://vtv.vn/video/phim-truyen-zippo-mu-tat-va-em-tap-16-168595.htm',
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -31,14 +32,17 @@ class VideoForm extends Component {
     }
   }
   handleClick() {
+    this.props.onLoad()
     this.props.getLink(this.state.value)
   }
   handleSubmit(evt) {
     evt.preventDefault()
+    const link = this.state.value
     this.setState({
       value: '',
       valid: false,
       touched: false,
+      placeholder: link,
     })
   }
   render() {
@@ -57,7 +61,7 @@ class VideoForm extends Component {
               <FormControl
                 type="text"
                 value={this.state.value}
-                placeholder="Enter text"
+                placeholder={this.state.placeholder}
                 onChange={this.handleChange}
                 onClick={() => { this.setState({ touched: true }) }}
               />
@@ -89,6 +93,7 @@ function mapStateToProps(state) {
 
 VideoForm.propTypes = {
   getLink: PropTypes.func,
+  onLoad: PropTypes.func,
 }
 
-export default connect(mapStateToProps, { getLink })(VideoForm)
+export default connect(mapStateToProps, { getLink, onLoad })(VideoForm)

@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export const GET_LINK = 'GET_LINK'
 export const LOADED = 'LOADED'
+export const ONLOAD = 'ONLOAD'
 
 const serverURL = 'https://vtvserver.herokuapp.com/'
 
@@ -13,6 +14,14 @@ export function getLink(link) {
   return {
     type: GET_LINK,
     payload: request,
+  }
+}
+
+export function onLoad() {
+  const loaded = false
+  return {
+    type: ONLOAD,
+    payload: loaded,
   }
 }
 
