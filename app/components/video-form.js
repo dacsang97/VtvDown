@@ -32,7 +32,7 @@ class VideoForm extends Component {
     }
   }
   handleClick() {
-    this.props.onLoad()
+    // this.props.onLoad()
     this.props.getLink(this.state.value)
   }
   handleSubmit(evt) {

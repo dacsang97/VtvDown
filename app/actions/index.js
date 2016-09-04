@@ -11,9 +11,18 @@ export function getLink(link) {
     link,
   }
   const request = axios.post(serverURL, props)
-  return {
-    type: GET_LINK,
-    payload: request,
+  const loaded = false
+  return (dispatch) => {
+    dispatch({
+      type: ONLOAD,
+      payload: loaded,
+    })
+    request.then((response) => {
+      dispatch({
+        type: GET_LINK,
+        payload: response,
+      })
+    })
   }
 }
 
